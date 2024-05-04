@@ -12,6 +12,7 @@ ll solve(ll idx, ll sum1, ll sum2) {
         return abs(sum1 - sum2);
     }
     int nidx = idx + 1;
+    int id = 0;
     ll leftchoose = solve(idx + 1, sum1 + weights[idx], sum2);
     ll rightchoose = solve(idx + 1, sum1, sum2 + weights[idx]);
     return min(leftchoose, rightchoose);
