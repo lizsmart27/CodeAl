@@ -5,9 +5,9 @@
 using namespace std;
 using ll = long long;
 #define endl "\n"
-char board[8][8];
+char board[5][5];
 int ans = 0;
-int pixQ[8];
+int pixQ[5];
 int isValid(int row, int col) {
     for (int i = 0; i < row; i++) {
         if (pixQ[i] == col || (row - i) == abs(col - pixQ[i]))
@@ -16,11 +16,11 @@ int isValid(int row, int col) {
     return 1;
 }
 void search(int row) {
-    if (row == 8) {
+    if (row == 5) {
         ans++;
         return;
     }
-    for (int col = 0; col < 8; col++) {
+    for (int col = 0; col < 5; col++) {
         if (board[row][col] == '*')
             continue;
 
@@ -34,8 +34,8 @@ void search(int row) {
 int main() {
     ios::sync_with_stdio(false);  // Fast I/O
     cin.tie(nullptr);             // Not safe to use cin/cout & scanf/printf together
-    for (int y = 0; y < 8; y++) {
-        for (int x = 0; x < 8; x++) {
+    for (int y = 0; y < 5; y++) {
+        for (int x = 0; x < 5; x++) {
             cin >> board[y][x];
         }
     }
